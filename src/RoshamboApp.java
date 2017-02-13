@@ -1,10 +1,8 @@
-import jdk.internal.util.xml.impl.Input;
-
-import java.util.stream.Stream;
-
-
-
+/**
+ * Class for main program
+ */
 public class RoshamboApp {
+
 
     /**
      * This method selects the user options for an opponent.  Although main uses char[] for valid selection,
@@ -26,6 +24,7 @@ public class RoshamboApp {
         }
         return InputValidator.getValidString(opponentOptions);    // Read user selectio
     }
+
 
     /**
      * This method prints the final results using the two Player objects
@@ -61,6 +60,12 @@ public class RoshamboApp {
     }
 
 
+    /**
+     * This method will allow for two players (player and opponent) to play against each other.
+     * They can continue to play each other until user chooses to not play, at that time prints the match results
+     * @param player Player object for the player
+     * @param opponent Player object for the opponent
+     */
     private static void playRoshambo(Player player, Player opponent) {
         // Clear the stats
         player.clearStats();
@@ -77,8 +82,8 @@ public class RoshamboApp {
             System.out.printf("%s: %s\n", opponent.getPlayerName(), opponent.getPlayerResult());
 
             // Print winner and update stats
-            // This is supposed to simplify the code.  The idea is to use the ordinals of the enums to keep
-            // the number of if statements at a minimum
+            // This is supposed to simplify the code, but I'm not sure if it serves that purpose.
+            // The idea is to use the ordinals of the enums to keep the number of if statements at a minimum
             // ROCK    |     PAPER     |     SCISSORS
             //  0              1                2
             // This condition takes care of conditions where player loses
@@ -167,9 +172,6 @@ public class RoshamboApp {
                     break;
                 }
             }
-
-
-
         }
 
         // Exit message
